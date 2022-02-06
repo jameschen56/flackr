@@ -27,7 +27,9 @@ function Navigation({ isLoaded }) {
     <nav className="nav-bar">
       <span className="left-nav-bar">
         <NavLink id="home-logo" exact to="/" style={{ textDecoration: "none" }}>
-          Home
+          <span className="dot" id="blueDot"></span>
+          <span className="dot" id="redDot"></span>
+          <span className="logo-title">flackr</span>
         </NavLink>
       </span>
       <span className="right-nav-bar">{isLoaded && sessionLinks}</span>
