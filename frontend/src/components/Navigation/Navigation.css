@@ -2,14 +2,58 @@
 
 * {
   box-sizing: border-box;
-  margin: 10px;
+  margin: 0px;
   padding:0;
 }
 
 
 .nav-bar {
   font-family: "Roboto", sans-serif;
+  display: flex;
+  background-color: black;
+  height: 60px;
+}
+
+
+.left-nav-bar {
+  font-weight: 500;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+
+.right-nav-bar {
   font-weight: 500;
   font-size: 16px;
   color: black;
+  margin-left: auto;
+  margin-right: 20px;
 }
+
+
+#login-btn {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  position: relative;
+  top: 15px;
+}
+
+
+#signup-btn {
+  text-decoration: none;
+  color: white;
+  margin: 20px;
+  position: relative;
+  top: 15px;
+}
+
+#home-logo {
+  text-decoration: none;
+  color: white;
+  margin: 25px;
+  position: relative;
+  top: 15px;
+}
+
+

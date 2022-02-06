@@ -13,21 +13,24 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-
-        <NavLink to="/login" style={{ textDecoration: 'none' }}>Log In</NavLink>
-        <NavLink to="/signup" style={{ textDecoration: 'none' }}>Sign Up</NavLink>
+        <NavLink id="login-btn" to="/login" >
+          Log In
+        </NavLink>
+        <NavLink id="signup-btn" to="/signup" >
+          Sign Up
+        </NavLink>
       </>
     );
   }
 
   return (
     <nav className="nav-bar">
-      <ul className="nav_links">
-        <NavLink exact to="/" style={{ textDecoration: 'none' }}>
+      <span className="left-nav-bar">
+        <NavLink id="home-logo" exact to="/" style={{ textDecoration: "none" }}>
           Home
         </NavLink>
-        {isLoaded && sessionLinks}
-      </ul>
+      </span>
+      <span className="right-nav-bar">{isLoaded && sessionLinks}</span>
     </nav>
   );
 }
