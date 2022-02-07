@@ -34,7 +34,7 @@
     text-align: center;
   }
   
-  .network-links {
+  .my-links {
     background-color: black;
     position: fixed;
     bottom: 0px;
@@ -42,18 +42,18 @@
     padding-right: 100px;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     z-index: 3;
     font-size: 17px;
     text-decoration: none;
   }
   
-  .network-links .fab, .network-links > div {
+  .my-links .fab, .my-links > div {
     color: rgba(245, 245, 245, 0.8);
     margin: 10px;
   }
   
-  .network-links .fab:hover {
+  .my-links .fab:hover {
     color: white;
   }

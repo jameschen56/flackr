@@ -9,8 +9,9 @@ const SplashPage = () => {
         <h2 className="header1">Find your inspiration.</h2>
         <h5 className="slogan">Join the Flackr community, home to tens of billions of photos and 2 million groups.</h5>
       </div>
-      <footer className="network-links">
-        <div>James Chen</div>
+      <footer className="my-links">
+        <div>Developed by James Chen</div>
+        <div> ---------------------------------</div>
         <a
           href="https://www.linkedin.com/in/james-chen56/"
           target="_blank"
