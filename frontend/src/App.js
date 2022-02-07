@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
+import PhotoStream from "./components/PhotoStream";
 import * as sessionActions from "./store/session";
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/images">
+            <PhotoStream />
           </Route>
         </Switch>
       )}
