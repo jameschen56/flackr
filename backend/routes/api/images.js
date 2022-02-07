@@ -5,8 +5,7 @@ const router = express.Router();
 
 const { Image } = require('../../db/models')
 
-// 
-
+// Get all the images
 router.get('', asyncHandler(async (req, res) => {
     const images = await Image.findAll();
     // console.log('images', images)
