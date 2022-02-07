@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     animation: slide 20s linear infinite;
+    /* background-image: url('../../../public/images/laptop.jpg'); */
 }
 
 .inspiration-copy {

@@ -1,0 +1,59 @@
+.splash-container {
+    display: grid;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-items: center;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+  }
+  
+  .header1 {
+    padding: 0;
+    margin: 0px 0 5px 0;
+    color: black;
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 450;
+    text-align: center;
+  }
+  
+  .slogan {
+    padding: 0;
+    margin: 0;
+    color: black;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 300;
+    margin: 15px 0 200px 0;
+    text-align: center;
+  }
+  
+  .network-links {
+    background-color: black;
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    padding-right: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 3;
+    font-size: 17px;
+    text-decoration: none;
+  }
+  
+  .network-links .fab, .network-links > div {
+    color: rgba(245, 245, 245, 0.8);
+    margin: 10px;
+  }
+  
+  .network-links .fab:hover {
+    color: white;
+  }

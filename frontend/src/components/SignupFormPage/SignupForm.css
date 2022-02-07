@@ -9,7 +9,7 @@
     font-weight:500;
     padding: 0 60px;
     letter-spacing: .5px;
-    background-image: url("../../../public/images/lake.jpeg");
+    /* background-image: url("../../../public/images/lake.jpeg"); */
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
