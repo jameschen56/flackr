@@ -43,6 +43,8 @@ function LoginFormPage() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
+        <div></div>
+        <h2>Log in to flackr</h2>
         <label>
           Username or Email
           <input
