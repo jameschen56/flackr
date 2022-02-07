@@ -1,5 +1,5 @@
 import React from 'react';
-// import InspirationContent from './InspirationContent';
+import InspirationWords from './InspirationWords';
 
 const SplashPage = () => {
 
@@ -7,7 +7,7 @@ const SplashPage = () => {
         <div className = "splash-content">
             <div className ="splash-slideshow">
                 <div className="splash-inspiration">
-                    {/* <InspirationContent /> */}
+                    <InspirationWords />
                     <div className="splash-attribution">
                     </div>
                 </div>
