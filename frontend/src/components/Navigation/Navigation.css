@@ -33,6 +33,7 @@
 .dot {
   height: 14px;
   width: 14px;
+  margin: 2px;
   border-radius: 50%;
   display: inline-block;
 }
