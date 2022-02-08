@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllImages } from "../../store/image";
+import { getAllImages, createImage } from "../../store/image";
 // import ImageDetail from '../ImageDetail'
 // import SingleImage from '../SingleImage'
 
@@ -14,6 +14,7 @@ const PhotoStream = () => {
 
   useEffect(() => {
     dispatch(getAllImages());
+    // dispatch(createImage())
   }, [dispatch]);
 
   return (
@@ -21,7 +22,8 @@ const PhotoStream = () => {
       <h1>PhotoStream</h1>
       <ol>
         {imagesArr?.map((image) => (
-          <l1 key={image.id}>{image.description}</l1>
+        //   <li key={image.id}>{image.description}</li>
+          <img key={image.id} src={image.imageUrl} alt={image.description}/>
         ))}
       </ol>
     </div>

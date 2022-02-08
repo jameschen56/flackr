@@ -12,5 +12,27 @@ router.get('', asyncHandler(async (req, res) => {
     res.json(images)
 }))
 
+// Get a single image 
+router.get('/:id', asyncHandler(async (req, res) => {
+    const id = parseInt(req.params.id, 10);
+    const image = await Image.findByPk(id);
+    res.json(image)
+}))
+
+// Create an image 
+router.post('', asyncHandler(async (req, res) => {
+    const { userId, imageUrl, description } = req.body
+
+    const newImage = await Image.create({
+        userId,
+        imageUrl,
+        description
+    })
+
+    return res.json(newImage)
+}))
+
+
+
 
 module.exports = router;
