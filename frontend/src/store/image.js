@@ -23,24 +23,22 @@ export const getAllImages = () => async(dispatch) => {
     dispatch(loadImages(data))
 }
 
-export const createImage = ({ userId, imageUrl, description}) => async (dispatch) => {
-    
+export const createImage = (newImage) => async (dispatch) => {
+    const { userId, imageUrl, description } = newImage;
     const response = await csrfFetch ("/api/images", {
-        method: "POST",
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({
-            userId,
-            imageUrl,
-            description,
-        }),
-    })
+      method: "POST",
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        userId,
+        imageUrl,
+        description,
+      }),
+    });
     console.log('response', response)
-    if(response.ok) {
-        const newImage = await response.json();
-        dispatch(addImage(newImage))
-        return newImage
-    }
-}
+    // const data = await response.json();
+    // dispatch(addImage(data.photo));
+    // return response;
+};
 
 const initialState = { };
 
