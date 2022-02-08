@@ -8,7 +8,6 @@ const { Image } = require('../../db/models')
 // Get all the images
 router.get('', asyncHandler(async (req, res) => {
     const images = await Image.findAll();
-    // console.log('images', images)
     res.json(images)
 }))
 
@@ -25,7 +24,8 @@ router.post('', asyncHandler(async (req, res) => {
     res.json(image)
 }))
 
-
-
-
 module.exports = router;
+
+
+
+

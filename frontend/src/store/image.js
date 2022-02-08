@@ -3,6 +3,8 @@ import { csrfFetch } from "./csrf";
 const LOAD_IMAGES = 'images/loadImages';
 const ADD_IMAGE = 'images/addImage';
 
+/***** Actions ****/
+
 export const loadImages = (images) => {
     return {
         type: LOAD_IMAGES,
@@ -16,6 +18,8 @@ export const addImage = (image) => {
         image
     }
 }
+
+/***** Thunk Actions ****/
 
 export const getAllImages = () => async(dispatch) => {
     const response = await csrfFetch('/api/images')
@@ -35,10 +39,13 @@ export const createImage = (newImage) => async (dispatch) => {
       }),
     });
     console.log('response', response)
-    // const data = await response.json();
-    // dispatch(addImage(data.photo));
-    // return response;
+
+    const data = await response.json();
+    dispatch(addImage(data));
+    return response;
 };
+
+/***** Reducer ****/
 
 const initialState = { };
 
@@ -57,3 +64,6 @@ const imageReducer = (state = initialState, action) => {
 }
 
 export default imageReducer;
+
+
+
