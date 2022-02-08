@@ -36,9 +36,9 @@ export const createImage = ({ userId, imageUrl, description}) => async (dispatch
     })
     console.log('response', response)
     if(response.ok) {
-        const image = await response.json();
-        dispatch(addImage(image))
-        return image
+        const newImage = await response.json();
+        dispatch(addImage(newImage))
+        return newImage
     }
 }
 
