@@ -43,4 +43,7 @@
   flex-direction: column;
 }
 
-
+form header {
+  text-align: center;
+  margin-left: 4rem;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import { NavLink } from "react-router-dom";
 import "./SignupForm.css";
 
 function SignupFormPage() {
@@ -39,6 +40,18 @@ function SignupFormPage() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
+        <header>
+          <NavLink
+            id="home-logo"
+            exact
+            to="/"
+            style={{ textDecoration: "none" }}
+          >
+            <span className="dot" id="blueDot"></span>
+            <span className="dot" id="redDot"></span>
+            <span className="logo-title">flackr</span>
+          </NavLink>
+        </header>
         <h2>Sign up for Flackr</h2>
         <label>
           Email
