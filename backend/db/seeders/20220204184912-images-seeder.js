@@ -18,7 +18,31 @@ module.exports = {
      {
        userId: 1,
        albumId: 3,
-       imageUrl: "https://images.unsplash.com/photo-1556063606-8d16e8ea26db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8ODZ8Njc2OTk4Mnx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
+       imageUrl: "https://images.unsplash.com/photo-1628126907372-761f54441c1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+       description: "Great horned owl"
+     },
+     {
+      userId: 1,
+      albumId: 3,
+      imageUrl: "https://images.unsplash.com/photo-1550547660-5d719a574887?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
+      description: "Coffee"
+     },
+     {
+      userId: 1,
+      albumId: 3,
+      imageUrl: "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
+      description: "Pancake & Syrup"
+     },
+     {
+      userId: 1,
+      albumId: 3,
+      imageUrl: "https://images.unsplash.com/photo-1476887334197-56adbf254e1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+      description: "Slice of fruit pie"
+     },
+     {
+       userId: 1,
+       albumId: 3,
+       imageUrl: "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
        description: "Welcome logo!!"
      },
      {
@@ -37,13 +61,19 @@ module.exports = {
       userId: 1,
       albumId: 2,
       imageUrl: "https://images.unsplash.com/photo-1606589618654-fbdf4ef8c32a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      description: "There's got to be a word for a how snow sits on trees. On the way to the top at Revelstoke."
+      description: "Paddling on a boat"
      },
      {
       userId: 1,
       albumId: 2,
-      imageUrl: "https://images.unsplash.com/photo-1572731013456-5ed911024bfa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1448518184296-a22facb4446f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
       description: "Takkakaw Falls, Yoho National Park"
+     },
+     {
+      userId: 1,
+      albumId: 2,
+      imageUrl: "https://images.unsplash.com/photo-1501213045308-cfe6e352d850?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1456&q=80",
+      description: "Spark"
      },
      {
       userId: 2,
@@ -68,6 +98,12 @@ module.exports = {
       albumId: 1,
       imageUrl: "https://images.unsplash.com/photo-1547401061-7fbd33ec9021?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
       description: ""
+     },
+     {
+      userId: 2,
+      albumId: 1,
+      imageUrl: "https://images.unsplash.com/photo-1571741406122-4cc7cad09e30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80",
+      description: "Gastown Steam Clock"
      }
      
    ], {});

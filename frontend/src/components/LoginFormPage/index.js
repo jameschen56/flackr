@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./LoginForm.css";
 
 function LoginFormPage() {
@@ -25,15 +26,16 @@ function LoginFormPage() {
   };
 
   const demoLogin = () => (
-    <button 
-      className='demo-button'
+    <button
+      className="demo-button"
       onClick={(e) => {
-        setCredential('demo@user.io');
-        setPassword('password');
+        setCredential("demo@user.io");
+        setPassword("password");
       }}
-    >Demo Login
+    >
+      Demo Login
     </button>
-  )
+  );
 
   return (
     <div className="login-form-container">
@@ -43,7 +45,18 @@ function LoginFormPage() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
-        <div></div>
+        <header>
+          <NavLink
+            id="home-logo"
+            exact
+            to="/"
+            style={{ textDecoration: "none" }}
+          >
+            <span className="dot" id="blueDot"></span>
+            <span className="dot" id="redDot"></span>
+            <span className="logo-title">flackr</span>
+          </NavLink>
+        </header>
         <h2>Log in to flackr</h2>
         <label>
           Username or Email
