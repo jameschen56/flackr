@@ -39,6 +39,7 @@ function SignupFormPage() {
             <li key={idx}>{error}</li>
           ))}
         </ul>
+        <h2>Sign up for Flackr</h2>
         <label>
           Email
           <input
