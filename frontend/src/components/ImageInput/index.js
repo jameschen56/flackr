@@ -22,7 +22,7 @@ const ImageInput = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newImage = {
-      // userId,
+      userId,
       imageUrl,
       description,
     };

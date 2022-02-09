@@ -8,6 +8,7 @@ const { Image } = require('../../db/models')
 // Get all the images
 router.get('', asyncHandler(async (req, res) => {
     const images = await Image.findAll();
+    console.log('images', images)
     res.json(images)
 }))
 
@@ -20,8 +21,10 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 // Create an image 
 router.post('', asyncHandler(async (req, res) => {
-    const image = await Image.create(req.body);
-    res.json(image)
+    // const image = await Image.create(req.body);
+    // console.log('image', image)
+    console.log('reqBody', req.body)
+    res.json('test')
 }))
 
 module.exports = router;
