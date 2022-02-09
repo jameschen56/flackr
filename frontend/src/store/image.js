@@ -43,6 +43,21 @@ export const getAllImages = () => async (dispatch) => {
   dispatch(loadImages(data));
 };
 
+export const updateImage = (image) => async (dispatch) => {
+  console.log(image);
+  const response = await csrfFetch(`/api/images/${image.id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ image }),
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(addImage(data.image));
+    // return data;
+  }
+};
+
 export const createImage = (newImage) => async (dispatch) => {
   const { userId, imageUrl, description } = newImage;
   const response = await csrfFetch("/api/images", {
@@ -82,6 +97,14 @@ const imageReducer = (state = initialState, action) => {
       return { ...action.images };
     case ADD_IMAGE:
       newState = { ...state, ...action.image };
+      return newState;
+    case UPDATE_IMAGE:
+      newState = {
+        ...state,
+        [action.image.id]: {
+          ...action.image,
+        },
+      };
       return newState;
     case REMOVE_IMAGE:
       newState = { ...state };

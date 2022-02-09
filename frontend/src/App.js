@@ -7,6 +7,8 @@ import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import PhotoStream from "./components/PhotoStream";
 import ImageInput from './components/ImageInput';
+import SingleImage from "./components/SingleImage";
+import ImageEdit from "./components/ImageEdit";
 import * as sessionActions from "./store/session";
 
 function App() {
@@ -35,6 +37,12 @@ function App() {
           </Route>
           <Route exact path="/images/upload">
             <ImageInput />
+          </Route>
+          <Route exact path="/images/:id">
+            <SingleImage />
+          </Route>
+          <Route exact path="images/:id/edit">
+             <ImageEdit />
           </Route>
           <Route>
             <h1>404: Not Found</h1>

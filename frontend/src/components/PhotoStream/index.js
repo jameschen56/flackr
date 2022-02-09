@@ -1,33 +1,53 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllImages, createImage } from "../../store/image";
-// import ImageDetail from '../ImageDetail'
-// import SingleImage from '../SingleImage'
-import './PhotoStream.css'
+import { Route } from "react-router-dom";
+import { getAllImages } from "../../store/image";
+import ImageDetail from "../ImageDetail";
+import SingleImage from '../SingleImage'
+import ImageInput from '../ImageInput'
+import "./PhotoStream.css";
 
 const PhotoStream = () => {
   const dispatch = useDispatch();
-
-  const images = useSelector((state) => state.image);
-  console.log("images", images);
-  const imagesArr = Object.values(images);
-  console.log("imagesArr", imagesArr);
+  const sessionUser = useSelector((state) => state.session.user);
+  const imagesObj = useSelector((state) => state.image);
+  const images = Object.values(imagesObj);
+  // console.log('images', images)
+  // console.log('sessionUser', sessionUser.id)
+  const sessionImages = images.filter(
+    (image) => image.userId === sessionUser.id
+  );
+  console.log("sessionImages", sessionImages);
 
   useEffect(() => {
     dispatch(getAllImages());
   }, [dispatch]);
 
   return (
-    <div>
-      <h1>Explore</h1>
-      <div className="photo-stream">
-        <ol>
-          {imagesArr?.map((image) => (
-            //   <li key={image.id}>{image.description}</li>
-            <img key={image.id} src={image.imageUrl} alt={image.description} />
-          ))}
-        </ol>
+    <div className="photo-page">
+      <div className="photo-info-container">
+        <div className="info-container">
+          <h1>{sessionUser.name}</h1>
+          <p>{sessionUser.username}</p>
+        </div>
       </div>
+      <div className="photo-stream-content">
+        {sessionImages?.map(({ imageUrl, id, description }) => (
+          <ImageDetail
+            key={id}
+            id={id}
+            imageUrl={imageUrl}
+            description={description}
+          />
+        ))}
+      </div>
+
+      <Route path="images/:id">
+        <SingleImage images={images} />
+      </Route>
+      <Route path="/images/upload">
+        <ImageInput />
+      </Route>
     </div>
   );
 };
