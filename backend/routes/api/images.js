@@ -21,10 +21,10 @@ router.get('/:id', asyncHandler(async (req, res) => {
 
 // Create an image 
 router.post('', asyncHandler(async (req, res) => {
-    // const image = await Image.create(req.body);
+    const image = await Image.create(req.body);
     // console.log('image', image)
     console.log('reqBody', req.body)
-    res.json('test')
+    res.json(image)
 }))
 
 module.exports = router;

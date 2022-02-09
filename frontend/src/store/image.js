@@ -2,6 +2,8 @@ import { csrfFetch } from "./csrf";
 
 const LOAD_IMAGES = 'images/loadImages';
 const ADD_IMAGE = 'images/addImage';
+const UPDATE_IMAGE = 'images/updateImage'
+const REMOVE_IMAGE = 'images/removeImage'
 
 /***** Actions ****/
 
@@ -16,6 +18,13 @@ export const addImage = (image) => {
     return {
         type: ADD_IMAGE,
         image
+    }
+}
+
+export const editImage = (image) => {
+    return {
+        type: UPDATE_IMAGE,
+        image,
     }
 }
 
@@ -38,12 +47,14 @@ export const createImage = (newImage) => async (dispatch) => {
         description,
       }),
     });
-    console.log('response', response)
+
+    // console.log('response', response)
 
     const data = await response.json();
-    dispatch(addImage(data));
+    dispatch(addImage(data.id));
     return response;
 };
+
 
 /***** Reducer ****/
 

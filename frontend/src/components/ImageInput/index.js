@@ -7,8 +7,7 @@ import './ImageInput.css'
 const ImageInput = () => {
   const dispatch = useDispatch();
 
-  const sessionUser = useSelector((state) => state.session.user);
-  console.log("sessionUser", sessionUser);
+  const sessionUser = useSelector((state) => state.session.user)
   const userId = sessionUser.id;
   console.log("userId", userId);
   const [imageUrl, setImageUrl] = useState("");
