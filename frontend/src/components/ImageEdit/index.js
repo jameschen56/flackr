@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteImage, updateImage } from '../../store/images';
+import { deleteImage, updateImage } from '../../store/image';
 import { useHistory } from "react-router-dom";
 
 
@@ -21,7 +21,7 @@ const ImageEdit = ({ singleImage }) => {
 
     const handleDelete = async (e) => {
       e.preventDefault();
-      dispatch(deleteImage(singleImage))
+      await dispatch(deleteImage(singleImage))
       history.push("/images")
     };
 
@@ -36,7 +36,7 @@ const ImageEdit = ({ singleImage }) => {
       };
 
       
-      dispatch(updateImage(updatedImage))
+      await dispatch(updateImage(updatedImage))
       history.push("/images")
     
     };
