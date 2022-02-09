@@ -36,6 +36,9 @@ function App() {
           <Route exact path="/images/upload">
             <ImageInput />
           </Route>
+          <Route>
+            <h1>404: Not Found</h1>
+          </Route>
         </Switch>
       )}
     </>

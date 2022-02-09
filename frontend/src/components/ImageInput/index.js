@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
 import { NavLink } from "react-router-dom";
@@ -6,6 +7,7 @@ import './ImageInput.css'
 
 const ImageInput = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user)
   const userId = sessionUser.id;
@@ -27,6 +29,7 @@ const ImageInput = () => {
     };
 
     dispatch(createImage(newImage));
+    history.push("/images")
     reset();
   };
 
