@@ -1,0 +1,48 @@
+.upload-photo-page {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.upload-photo-form {
+  background-color: white;
+  margin: 100px auto;
+  width: 22rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  font-family: Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  width: 94%;
+  margin: 0px;
+}
+
+.inputs-container > input {
+  /* margin: 3px 10px; */
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+}
+
+.upload-photo-title {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #212124;
+}
+
+.upload-photo-logo {
+    margin-bottom: 1rem;
+}
