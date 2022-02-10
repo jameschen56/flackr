@@ -14,7 +14,7 @@ const SingleImage = () => {
   const singleImage = images.find((image) => image.id === +id);
   const [showMenu, setShowMenu] = useState(false);
 
-  console.log('sessionUser', sessionUser)
+  // console.log('sessionUser', sessionUser)
 
   const openCloseMenu = () => {
     if (showMenu) setShowMenu(false);

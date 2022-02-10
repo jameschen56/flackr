@@ -6,9 +6,9 @@ import { useHistory } from "react-router-dom";
 
 const ImageEdit = ({ singleImage }) => {
 
-    console.log('singleImage', singleImage)
+    // console.log('singleImage', singleImage)
     const id = parseInt(singleImage.id, 10);
-    console.log(id)
+    // console.log(id)
     const userId = (parseInt(singleImage.userId, 10));
     const [description, setDescription] = useState(singleImage.description);
     const [imageUrl, setImageUrl] = useState(singleImage.imageUrl);

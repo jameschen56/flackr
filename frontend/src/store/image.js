@@ -44,7 +44,7 @@ export const getAllImages = () => async (dispatch) => {
 };
 
 export const updateImage = (image) => async (dispatch) => {
-  console.log(image);
+  // console.log(image);
   const response = await csrfFetch(`/api/images/${image.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -54,7 +54,7 @@ export const updateImage = (image) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(addImage(data.image));
-    // return data;
+    return data;
   }
 };
 
@@ -73,7 +73,7 @@ export const createImage = (newImage) => async (dispatch) => {
   // console.log('response', response)
 
   const data = await response.json();
-  console.log('data', data)
+  // console.log('data', data)
   dispatch(addImage(data.id));
   return response;
 };
