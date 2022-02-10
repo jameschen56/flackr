@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
@@ -16,13 +16,18 @@ const ImageInput = () => {
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
 
-  useEffect(() => {
-    const validationErrors = [];
+  const uploadValidation = (e) => {
+    let validationErrors = [];
     if (!imageUrl.length) validationErrors.push("Please provide a valid URL");
     if (imageUrl.length > 0 && !imageUrl.match(/^https?:\/\/.+\/.+$/)) validationErrors.push("Please provide a valid URL");
     if (!description.length) validationErrors.push("Please provide a description");
-    setErrors(validationErrors);
-}, [imageUrl, description])
+
+    if (validationErrors.length) {
+      setErrors(validationErrors);
+      console.log('validationErrors', validationErrors);
+      return true;
+    } else return false;
+  }
 
   const reset = () => {
     setImageUrl("");
@@ -30,17 +35,21 @@ const ImageInput = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    if(uploadValidation()) {
 
-    const newImage = {
-      userId,
-      imageUrl,
-      description,
-    };
+      e.preventDefault();
+    } else {
 
-    await dispatch(createImage(newImage));
-    history.push("/images")
-    reset();
+      const newImage = {
+        userId,
+        imageUrl,
+        description,
+      };
+
+      await dispatch(createImage(newImage));
+      reset();
+      // history.push("/images")
+    }
   };
 
   return (
@@ -80,7 +89,9 @@ const ImageInput = () => {
             placeholder="Add your description"
             rows="3"
           ></textarea>
-          <button type="submit" disabled={!!errors.length}>Submit</button>
+          <div className="blank-spaces">{""}</div>
+          {/* <button type="submit">Submit</button> */}
+          <NavLink className="upload-image-button" onClick={handleSubmit} to="/images">Submit</NavLink>
         </div>
       </form>
     </div>
