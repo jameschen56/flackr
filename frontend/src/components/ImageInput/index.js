@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
 import { NavLink } from "react-router-dom";
@@ -6,10 +7,11 @@ import './ImageInput.css'
 
 const ImageInput = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user)
   const userId = sessionUser.id;
-  console.log("userId", userId);
+  // console.log("userId", userId);
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
 
@@ -18,7 +20,7 @@ const ImageInput = () => {
     setDescription("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newImage = {
       userId,
@@ -26,7 +28,8 @@ const ImageInput = () => {
       description,
     };
 
-    dispatch(createImage(newImage));
+    await dispatch(createImage(newImage));
+    history.push("/images")
     reset();
   };
 

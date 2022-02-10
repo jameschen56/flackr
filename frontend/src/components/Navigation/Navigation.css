@@ -76,3 +76,16 @@
   position: relative;
   top: 15px;
 }
+
+/*** Profile Button ***/
+
+.logged-in-user-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+#upload-button button img {
+  width: 50px;
+  margin-right: 20px;
+  margin-right: 1.5rem;
+}

@@ -1,0 +1,8 @@
+.photo-stream {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+}
