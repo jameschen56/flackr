@@ -9,7 +9,7 @@ const { validateCreate, validateUpdate } = require('../../utils/validation')
 // Get all the images
 router.get('', asyncHandler(async (req, res) => {
     const images = await Image.findAll();
-    console.log('images', images)
+    // console.log('images', images)
     res.json(images)
 }))
 
@@ -28,7 +28,7 @@ router.post('', validateCreate, asyncHandler(async (req, res) => {
 
 // Delete an image
 router.delete('/:id', asyncHandler(async (req, res) => {
-    console.log("reqBody", req.body)
+    // console.log("reqBody", req.body)
     
     const id = parseInt(req.params.id, 10);
     const image = await Image.findByPk(id);
@@ -38,10 +38,10 @@ router.delete('/:id', asyncHandler(async (req, res) => {
 
 // Update an image
 router.put('/:id', validateUpdate, asyncHandler(async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const id = parseInt(req.params.id, 10);
     const image = await Image.findByPk(id);
-    console.log(image);
+    // console.log(image);
     await image.update({
       id: req.body.image.id,
       userId: req.body.image.userId,
