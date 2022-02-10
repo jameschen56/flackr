@@ -6,8 +6,8 @@ const SplashPage = () => {
     
     <div className="splash-container">
       <div className="splash-text-container">
-        {/* <h2 className="header1">Find your inspiration.</h2> */}
-        {/* <h5 className="slogan">Join the Flackr community, home to tens of billions of photos and 2 million groups.</h5> */}
+        <h2 className="header1">Find your inspiration.</h2> 
+        <h5 className="slogan">Join the Flackr community, home to tens of billions of photos and 2 million groups.</h5>
       </div>
       <footer className="my-links">
         <div>© 2022 | flackr</div>

@@ -10,11 +10,12 @@
 
 .upload-photo-form {
   background-color: white;
-  margin: 100px auto;
-  width: 22rem;
+  margin: 220px auto;
+  width: 35rem;
+  height: 19rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   font-family: Helvetica, sans-serif;
   font-size: 0.8rem;
 }
@@ -44,5 +45,12 @@
 }
 
 .upload-photo-logo {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.errors-list {
+  color: red;
+  font-size: 15px;
+  position: relative;
+  padding: 0.8rem;
 }

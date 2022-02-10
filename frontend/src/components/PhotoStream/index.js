@@ -17,7 +17,7 @@ const PhotoStream = () => {
   const sessionImages = images.filter(
     (image) => image.userId === sessionUser.id
   );
-  console.log("sessionImages", sessionImages);
+  // console.log("sessionImages", sessionImages);
 
   useEffect(() => {
     dispatch(getAllImages());

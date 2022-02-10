@@ -1,19 +1,28 @@
-import { useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
-import { NavLink } from "react-router-dom";
-import './ImageInput.css'
+import "./ImageInput.css";
 
 const ImageInput = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const sessionUser = useSelector((state) => state.session.user)
+  const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
   // console.log("userId", userId);
+
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
+  const [errors, setErrors] = useState([]);
+
+  useEffect(() => {
+    const validationErrors = [];
+    if (!imageUrl.length) validationErrors.push("Please provide a valid URL");
+    if (imageUrl.length > 0 && !imageUrl.match(/^https?:\/\/.+\/.+$/)) validationErrors.push("Please provide a valid URL");
+    if (!description.length) validationErrors.push("Please provide a description");
+    setErrors(validationErrors);
+}, [imageUrl, description])
 
   const reset = () => {
     setImageUrl("");
@@ -22,6 +31,7 @@ const ImageInput = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const newImage = {
       userId,
       imageUrl,
@@ -35,7 +45,7 @@ const ImageInput = () => {
 
   return (
     <div className="upload-photo-page">
-        <form onSubmit={handleSubmit} className="upload-photo-form">
+      <form onSubmit={handleSubmit} className="upload-photo-form">
         <header className="upload-photo-logo">
           <NavLink
             id="home-logo"
@@ -49,8 +59,12 @@ const ImageInput = () => {
           </NavLink>
         </header>
         <h1 className="upload-photo-title">Upload Photo</h1>
-        <div className='inputs-container'>
-      
+        <ul className='errors-list'>
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
+        <div className="inputs-container">
           <input
             type="text"
             onChange={(e) => setImageUrl(e.target.value)}
@@ -66,9 +80,9 @@ const ImageInput = () => {
             placeholder="Add your description"
             rows="3"
           ></textarea>
-          <button type="submit">Submit</button>
+          <button type="submit" disabled={!!errors.length}>Submit</button>
         </div>
-        </form>
+      </form>
     </div>
   );
 };
