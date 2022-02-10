@@ -54,7 +54,7 @@ export const updateImage = (image) => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     dispatch(addImage(data.image));
-    // return data;
+    return data;
   }
 };
 
