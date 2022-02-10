@@ -11,7 +11,7 @@ const ImageInput = () => {
 
   const sessionUser = useSelector((state) => state.session.user)
   const userId = sessionUser.id;
-  console.log("userId", userId);
+  // console.log("userId", userId);
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
 
