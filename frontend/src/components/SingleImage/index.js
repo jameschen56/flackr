@@ -45,7 +45,7 @@ const SingleImage = () => {
                 </button>
                 </div>
                 <img className="single-image" src={singleImage?.imageUrl} alt={singleImage?.description} />
-                <p>{singleImage.description}</p>
+                <p>Description: {singleImage.description}</p>
             </div>
         </div>
         {showMenu && (

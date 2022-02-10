@@ -27,8 +27,7 @@ const PhotoStream = () => {
     <div className="photo-page">
       <div className="photo-info-container">
         <div className="info-container">
-          <h1>{sessionUser.name}</h1>
-          <p>{sessionUser.username}</p>
+          <h1>PhotoStream</h1>
         </div>
       </div>
       <div className="photo-stream-content">

@@ -20,7 +20,7 @@ const ImageInput = () => {
     setDescription("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newImage = {
       userId,
@@ -28,7 +28,7 @@ const ImageInput = () => {
       description,
     };
 
-    dispatch(createImage(newImage));
+    await dispatch(createImage(newImage));
     history.push("/images")
     reset();
   };
