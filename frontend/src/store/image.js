@@ -95,7 +95,9 @@ const imageReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case LOAD_IMAGES:
-      return { ...action.images };
+      newState = {}
+      action.images.forEach(image => newState[image.id] = image)
+      return newState;
     case ADD_IMAGE:
       newState = { ...state, ...action.image };
       return newState;

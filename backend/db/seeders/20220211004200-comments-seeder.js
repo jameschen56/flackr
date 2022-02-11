@@ -81,27 +81,27 @@ module.exports = {
     },
     {
       userId: 2,
-      imageId: 19,
+      imageId: 10,
       comment: "What a nice view!",
     },
     {
       userId: 3,
-      imageId: 24,
+      imageId: 12,
       comment: "What a cute rabbit :)",
     },
     {
       userId: 3,
-      imageId: 32,
+      imageId: 8,
       comment: "I love Mustang!",
     },
     {
       userId: 3,
-      imageId: 34,
+      imageId: 5,
       comment: "Nice choice of color!!",
     },
     {
       userId: 3,
-      imageId: 36,
+      imageId: 9,
       comment: "I like hiking the mountain - Definitely would like to visit this place soon!",
     },
    ], {});
