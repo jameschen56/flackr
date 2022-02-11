@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     Image.belongsTo(models.User, {
       foreignKey: 'userId'
     })
+    Image.hasMany(models.Comment, {foreignKey: 'imageId', onDelete: "cascade", hooks: true})
   };
   return Image;
 };
