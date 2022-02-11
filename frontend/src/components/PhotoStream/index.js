@@ -24,12 +24,8 @@ const PhotoStream = () => {
   }, [dispatch]);
 
   return (
-    <div className="photo-page">
-      <div className="photo-info-container">
-        <div className="info-container">
-          <h1>PhotoStream</h1>
-        </div>
-      </div>
+    <div className="images-container">
+      {/* <h2 className="explore-photo-stream">Explore</h2> */}
       <div className="photo-stream-content">
         {sessionImages?.map(({ imageUrl, id, description }) => (
           <ImageDetail

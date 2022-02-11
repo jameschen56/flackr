@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
-import { useHistory } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
-import './Navigation.css'
+import { useHistory } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
+import "./Navigation.css";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -30,18 +30,18 @@ function ProfileButton({ user }) {
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout());
-    history.push("/")
+    history.push("/");
   };
 
   return (
     <>
       <div className="logged-in-user-nav">
-      <NavLink id="upload-button" to="/images/upload"><button>
-        <img src={"https://www.lifewire.com/thmb/2KYEaloqH6P4xz3c9Ot2GlPLuds=/1920x1080/smart/filters:no_upscale()/cloud-upload-a30f385a928e44e199a62210d578375a.jpg"}
-        alt="upload icon" 
-        />
-      </button></NavLink>
-        <button onClick={openMenu}>
+        <NavLink className="images-tabs" to="/images">Explore</NavLink>
+        <Link to="/images/upload">
+          <i className="fas fa-cloud-upload-alt fa-lg" />
+        </Link>
+        <span className="welcome-user">Welcome {user.username}!</span>
+        <button onClick={openMenu} className='user-button'>
           <i className="fas fa-user" />
         </button>
         {showMenu && (
