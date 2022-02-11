@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import ImageEdit from '../ImageEdit';
+import Comment from '../Comments';
 
 
 const SingleImage = () => {
@@ -45,7 +46,10 @@ const SingleImage = () => {
                 </button>
                 </div>
                 <img className="single-image" src={singleImage?.imageUrl} alt={singleImage?.description} />
-                <p>Description: {singleImage.description}</p>
+                <p>Description: {singleImage?.description}</p>
+                <div>
+                  <Comment />
+                </div>
             </div>
         </div>
         {showMenu && (
