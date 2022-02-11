@@ -1,8 +1,27 @@
-.photo-stream {
+
+.images-container {
+  column-count: 4;
+  margin: 100px auto 100px auto;
+  column-gap: 10rem;
+  padding: 1rem;
+}
+
+
+.photo-stream-content {
   position: absolute;
   top: 250px;
   width: 100%;
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+}
+
+.div {
+  display: block;
+}
+
+.explore-photo-stream {
+  margin-left: 4.5rem;
+  font-weight: bold;
+  font-size: 2.7rem;
 }

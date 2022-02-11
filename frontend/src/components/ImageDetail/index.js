@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
+import './ImageDetail.css'
 
 
 const ImageDetail = ({ id, imageUrl, description }) => {

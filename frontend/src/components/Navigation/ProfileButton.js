@@ -36,7 +36,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <div className="logged-in-user-nav">
-        <NavLink className="images-tabs" to="/images">Discovery</NavLink>
+        <NavLink className="images-tabs" to="/images">Explore</NavLink>
         <Link to="/images/upload">
           <i className="fas fa-cloud-upload-alt fa-lg" />
         </Link>
