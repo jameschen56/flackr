@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import { NavLink } from "react-router-dom";
-import "./SignupForm.css";
+import "./SignupFormPage.css";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -51,6 +51,7 @@ function SignupFormPage() {
             <span className="dot" id="redDot"></span>
             <span className="logo-title">flackr</span>
           </NavLink>
+          <div className='empty-space'></div>
         </header>
         <h2>Sign up for Flackr</h2>
         <label>
