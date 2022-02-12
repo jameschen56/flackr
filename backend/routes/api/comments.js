@@ -31,9 +31,10 @@ router.post('/:id', requireAuth, asyncHandler(async(req, res) => {
 }));
 
 router.put('/:id', requireAuth, asyncHandler(async(req, res) => {
-    console.log('reqBody', req.body)
     const {content} = req.body;
+    console.log('-------------------------------------------------------------------', req.body)
     const {id} = req.params;
+    console.log('-------------------------------------------------------------------', req.params)
     const comment = await Comment.findByPk(id);
     await comment.update({comment: content});
     return res.json(comment)

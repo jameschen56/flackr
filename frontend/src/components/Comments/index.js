@@ -17,11 +17,7 @@ const Comment = () => {
         return Object.values(state.comments)
     })
 
-    console.log('comments', comments)
-
     const usersComments = comments.filter(comment => comment.imageId === Number(id))
-
-    console.log('userComments', usersComments)
 
     useEffect(() => {
         dispatch(getComments(id))

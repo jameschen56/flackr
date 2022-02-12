@@ -40,12 +40,6 @@ module.exports = {
       description: "Slice of fruit pie"
      },
      {
-       userId: 1,
-       albumId: 3,
-       imageUrl: "https://images.unsplash.com/photo-1554520735-0a6b8b6ce8b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1528&q=80",
-       description: "Welcome logo!!"
-     },
-     {
       userId: 1,
       albumId: 2,
       imageUrl: "https://images.unsplash.com/photo-1510992107199-e5224f959d6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGNhbmFkYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60",
