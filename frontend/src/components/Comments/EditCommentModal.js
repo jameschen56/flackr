@@ -4,8 +4,7 @@ import {useParams, Redirect, useHistory} from 'react-router-dom';
 import {Modal} from '../../context/Modal';
 import {getComments, updateComment} from '../../store/comment';
 
-
-
+import './Comment.css'
 
 function EditCommentModal () {
     const {id} = useParams()
