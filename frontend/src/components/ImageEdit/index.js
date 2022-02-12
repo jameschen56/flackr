@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteImage, updateImage } from '../../store/image';
 import { useHistory } from "react-router-dom";
+import './ImageEdit.css'
 
 
 const ImageEdit = ({ singleImage }) => {
