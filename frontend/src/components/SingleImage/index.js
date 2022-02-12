@@ -42,7 +42,7 @@ const SingleImage = () => {
             <div className="photo-description-text">
                 <div className="name-and-edit">
                 <h2>Hi, {sessionUser.username}</h2>
-                <button id="edit-photo-button" onClick={openCloseMenu}>
+                <button id="edit-image-button" onClick={openCloseMenu}>
                   <i className="fas fa-pen"></i>
                 </button>
                 </div>

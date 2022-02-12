@@ -4,6 +4,8 @@ import {useParams, Redirect, Link} from 'react-router-dom';
 import EditCommentModal from './EditCommentModal';
 import {getComments, createComment,removeComment} from '../../store/comment';
 
+import './Comment.css'
+
 const Comment = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
