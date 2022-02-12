@@ -3,8 +3,10 @@ import { useHistory, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
 import "./ImageInput.css";
+import PhotoStream from "../PhotoStream";
 
 const ImageInput = () => {
+  const [render, setRender] = useState(false)
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -45,14 +47,18 @@ const ImageInput = () => {
         imageUrl,
         description,
       };
+      setRender(true)
 
       await dispatch(createImage(newImage));
       reset();
-      // history.push("/images")
+      history.push("/images")
     }
   };
 
   return (
+          render ? (
+          <PhotoStream render={render}/>
+        ) :
     <div className="upload-photo-page">
       <form onSubmit={handleSubmit} className="upload-photo-form">
         <header className="upload-photo-logo">
