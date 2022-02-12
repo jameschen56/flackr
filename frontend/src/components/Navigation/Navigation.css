@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Roboto&display=swap");
 
 * {
   box-sizing: border-box;
   margin: 0px;
-  padding:0;
+  padding: 0;
 }
-
 
 .nav-bar {
   font-family: "Roboto", sans-serif;
@@ -14,13 +13,11 @@
   height: 68px;
 }
 
-
 .left-nav-bar {
   font-weight: 500;
   font-size: 16px;
   margin-left: 5px;
 }
-
 
 .right-nav-bar {
   font-weight: 500;
@@ -39,11 +36,11 @@
 }
 
 #blueDot {
-  background-color: #0063DC
+  background-color: #0063dc;
 }
 
 #redDot {
-  background-color: #FF0084;
+  background-color: #ff0084;
 }
 
 .logo-title {
@@ -57,16 +54,24 @@
   color: white;
   margin: 20px;
   position: relative;
-  top: 15px;
+  top: 18px;
 }
-
 
 #signup-btn {
   text-decoration: none;
-  color: white;
+  background-color: white;
+  transition: color 0.15c ease-in-out;
+  color: black;
+  width: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 5.5px 5.5px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
   margin: 20px;
   position: relative;
-  top: 15px;
+  top: 18px;
 }
 
 #home-logo {

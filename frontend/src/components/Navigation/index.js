@@ -26,7 +26,7 @@ function Navigation({ isLoaded }) {
   return (
     <nav className="nav-bar">
       <span className="left-nav-bar">
-        <NavLink id="home-logo" exact to="/images" style={{ textDecoration: "none" }}>
+        <NavLink id="home-logo" exact to="/" style={{ textDecoration: "none" }}>
           <span className="dot" id="blueDot"></span>
           <span className="dot" id="redDot"></span>
           <span className="logo-title">flackr</span>

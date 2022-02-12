@@ -24,7 +24,7 @@ function EditCommentModal () {
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
-        dispatch(updateComment(id))
+        // dispatch(updateComment(id))
         dispatch(getComments(id))
     }, [dispatch, id, sessionUser.id, editedComment])
 
@@ -52,10 +52,10 @@ function EditCommentModal () {
         <>
         <button className="far fa-edit" text="Edit Comment" onClick={() => {setShowModal(true)}}></button>
         {usersComments?.map((comment)=>(
-            <div hidden={comment.userId !== sessionUser.id}>
+            <div hidden={comment.userId !== sessionUser.id} key={id}>
                 {showModal && (
                     <Modal>
-                        <div className='edit-form-container'>
+                        <div className='edit-form-container' >
                             <form className="edit-form" onSubmit={handleEditComment}>
                                 <h1>Update Comment</h1>
                                 <div className="update-textarea">

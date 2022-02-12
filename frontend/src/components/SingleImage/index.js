@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import ImageEdit from '../ImageEdit';
 import Comment from '../Comments';
+import './SingleImage.css'
 
 
 const SingleImage = () => {
@@ -27,15 +28,15 @@ const SingleImage = () => {
     <div className="single-image-page">
         <div className='single-image-container'>
           <div className="single-icons">
-            <NavLink to="/images">
-              <i className="arrow left"></i>
-               Back to Photostream</NavLink>
+            <NavLink to="/images" className='arrow-left'>
+            {/* <i class="fas fa-arrow-alt-circle-left"></i> */}
+               Back to Explore</NavLink>
             </div>
-
-        
+                <img className="single-image" src={singleImage?.imageUrl} alt={singleImage?.description} />
 
 
         </div>
+
         <div className="photo-description">
 
             <div className="photo-description-text">
@@ -45,7 +46,6 @@ const SingleImage = () => {
                   <i className="fas fa-pen"></i>
                 </button>
                 </div>
-                <img className="single-image" src={singleImage?.imageUrl} alt={singleImage?.description} />
                 <p>Description: {singleImage?.description}</p>
                 <div>
                   <Comment />
