@@ -76,9 +76,6 @@ JWT_EXPIRES_IN=604800
 
     * ```npm start```
 
-# Features 
-- Flackr members can create, read, update, and delete their photos.
-- Flackr members can create, read, update, and delete their comments. 
 
 
 
