@@ -76,7 +76,7 @@ module.exports = {
     },
     {
       userId: 2,
-      imageId: 16,
+      imageId: 15,
       comment: "This photo has a lof of meanings.",
     },
     {

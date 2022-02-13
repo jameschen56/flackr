@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { useHistory, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
 import "./ImageInput.css";
 
 const ImageInput = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const sessionUser = useSelector((state) => state.session.user);
   const userId = sessionUser.id;
@@ -99,5 +98,3 @@ const ImageInput = () => {
 };
 
 export default ImageInput;
-
-

@@ -36,10 +36,10 @@ const ImageEdit = ({ singleImage }) => {
         description
       };
 
-      
+
       await dispatch(updateImage(updatedImage))
       history.push("/images")
-    
+
     };
 
     return (
