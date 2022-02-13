@@ -36,7 +36,9 @@ router.put('/:id', requireAuth, asyncHandler(async(req, res) => {
     const {id} = req.params;
     console.log('-------------------------------------------------------------------', req.params)
     const comment = await Comment.findByPk(id);
+    console.log('-------------------------------------------------------------------', comment)
     await comment.update({comment: content});
+    // console.log('---------------JSON---------------', res.json(comment))
     return res.json(comment)
 }));
 
