@@ -1,16 +1,12 @@
 # Overview
 
-This is a flackr clone of [Flickr](https://www.flickr.com/). flackr is a photo-sharing application where users can store and upload their favorite photos.
-
-
+Inspired by Flickr, [Flackr](https://flackr-app.herokuapp.com/) is a photo-sharing platform where users can store and upload their favorite photos.
 
 
 # Index
 |
 [MVP Feature List](https://github.com/jameschen56/flackr/wiki/MVP-Features-List) |
 [Database Schema](https://github.com/jameschen56/flackr/wiki/Database-Schema) |
-
-
 
 # Technologies Used
   - React
@@ -22,6 +18,20 @@ This is a flackr clone of [Flickr](https://www.flickr.com/). flackr is a photo-s
   - Sequelize
   - PostgreSQL
   - Heroku
+
+# Features
+## Splash Page 
+![Screen Shot 2022-02-13 at 3 07 02 PM](https://user-images.githubusercontent.com/87781597/153779530-9e11607d-f7c5-4dad-93ea-a1739486cdd8.png)
+
+## Login & Signup 
+![Screen Shot 2022-02-13 at 3 16 08 PM](https://user-images.githubusercontent.com/87781597/153779604-66c58354-41ec-430b-a500-93c6cbe612c1.png)
+![Screen Shot 2022-02-13 at 3 20 17 PM](https://user-images.githubusercontent.com/87781597/153779764-d0adf994-0b63-4074-b7eb-15bd19d5791c.png)
+
+## Photo Stream
+![Screen Shot 2022-02-13 at 3 22 10 PM](https://user-images.githubusercontent.com/87781597/153779892-dc4abf46-40ae-4f52-a75f-e2a56df25fff.png)
+
+## Single Image & Comments
+![Screen Shot 2022-02-13 at 3 23 24 PM](https://user-images.githubusercontent.com/87781597/153779975-a58630da-9280-47bb-8a4f-33cffdb6fdb3.png)
 
 
 # Getting started
@@ -66,6 +76,9 @@ JWT_EXPIRES_IN=604800
 
     * ```npm start```
 
+# Features 
+- Flackr members can create, read, update, and delete their photos.
+- Flackr members can create, read, update, and delete their comments. 
 
 
 

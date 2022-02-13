@@ -8,6 +8,7 @@ import './Comment.css'
 
 function EditCommentModal ({ render, setRender }) {
     const {id} = useParams()
+
     const dispatch = useDispatch();
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
@@ -57,12 +58,12 @@ function EditCommentModal ({ render, setRender }) {
                     <Modal>
                         <div className='edit-form-container' >
                             <form className="edit-form" onSubmit={handleEditComment}>
-                                <h1>Update Comment</h1>
+                                <h1>Edit Comment</h1>
                                 <div className="update-textarea">
-                                    <textarea placeholder={comment.comment} className="comment-txt-area" type="textarea" value={editedComment.comment} onChange={(e) =>setEditedComment(e.target.value)}/>
+                                    <textarea placeholder={comment.comment} className="comment-txt-area" type="textarea" value={editedComment.comment} onChange={(e) =>setEditedComment(e.target.value)} required/>
                                 </div>
                                 <div className="update-bttn">
-                                    <button onClick={e=> setCommentUpdateId(comment.id)}>Update Comment</button>
+                                    <button onClick={e=> setCommentUpdateId(comment.id)}>Edit Comment</button>
                                 </div>
                                 <div className="update-bttn">
                                     <button onClick={handleCancelEdit}>Cancel</button>
