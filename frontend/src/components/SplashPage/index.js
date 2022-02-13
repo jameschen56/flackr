@@ -9,11 +9,11 @@ const SplashPage = () => {
         <div className="splash-words">
           <h1>Find your inspiration.</h1>
           <h2 className="flickr-community">
-            Join the Flickr community, home to tense of billions of photos and 2
+            Join the Flackr community, home to tens of billions of photos and 2
             million groups.
           </h2>
           <NavLink to="signup">
-            <button>Start for free</button>
+            <button className='start-free-btn'>Start for free</button>
           </NavLink>
         </div>
       </div>
