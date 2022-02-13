@@ -12,7 +12,6 @@ const SplashPage = () => {
       <footer className="my-links">
         <div>© 2022 | flackr</div>
         <div>Developed by James Chen</div>
-        <div> ---------------------------------</div>
         <a
           href="https://www.linkedin.com/in/james-chen56/"
           target="_blank"
