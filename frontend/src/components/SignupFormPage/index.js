@@ -54,7 +54,7 @@ function SignupFormPage() {
           </NavLink>
           <div className="empty-space"></div>
         </header>
-        <h2>Sign up for Flackr</h2>
+        <h2>Sign up for flackr</h2>
         <label>
           Name
           <input

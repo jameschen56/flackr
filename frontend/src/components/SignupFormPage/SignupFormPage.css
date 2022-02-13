@@ -68,3 +68,7 @@ form header {
   height: 42px;
   width: 95%;
 }
+
+.signup-btn:hover {
+  color: #0000007a;
+}

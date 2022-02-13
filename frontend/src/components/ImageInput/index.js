@@ -66,7 +66,8 @@ const ImageInput = () => {
             <span className="logo-title">flackr</span>
           </NavLink>
         </header>
-        <h1 className="upload-photo-title">Upload Photo</h1>
+        <div className='empty-space'></div>
+        <div className="upload-photo-title">Upload Photo</div>
         <ul className='errors-list'>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
