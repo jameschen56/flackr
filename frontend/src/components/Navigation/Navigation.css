@@ -50,14 +50,42 @@
 }
 
 #login-btn {
-  text-decoration: none;
-  color: white;
-  margin: 20px;
-  position: relative;
-  top: 18px;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  background: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+}
+
+#login-btn:hover {
+  color: #ffffff94;
 }
 
 #signup-btn {
+  border: none;
+  display: inline-block;
+  margin: 0;
+  background: none;
+  background-color: white;
+  color: #000000;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: 3px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+#signup-btn:hover {
+  color: #0000007a;
+}
+
+/* #signup-btn {
   text-decoration: none;
   background-color: white;
   transition: color 0.15c ease-in-out;
@@ -72,7 +100,7 @@
   margin: 20px;
   position: relative;
   top: 18px;
-}
+} */
 
 #home-logo {
   text-decoration: none;

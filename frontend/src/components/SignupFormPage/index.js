@@ -8,6 +8,7 @@ import "./SignupFormPage.css";
 function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -33,8 +34,8 @@ function SignupFormPage() {
   };
 
   return (
-    <div className='signup-form-container'>
-      <form onSubmit={handleSubmit} className='form'>
+    <div className="signup-form-container">
+      <form onSubmit={handleSubmit} className="form">
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -51,9 +52,18 @@ function SignupFormPage() {
             <span className="dot" id="redDot"></span>
             <span className="logo-title">flackr</span>
           </NavLink>
-          <div className='empty-space'></div>
+          <div className="empty-space"></div>
         </header>
-        <h2>Sign up for Flackr</h2>
+        <h2>Sign up for flackr</h2>
+        <label>
+          Name
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </label>
         <label>
           Email
           <input
@@ -90,7 +100,7 @@ function SignupFormPage() {
             required
           />
         </label>
-        <button type="submit">Sign Up</button>
+        <button type="submit" className='signup-btn'>Sign Up</button>
       </form>
     </div>
   );

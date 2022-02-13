@@ -5,14 +5,15 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #Eaf4fc;
   z-index: -1;
 }
 
 .upload-photo-form {
   background-color: white;
   margin: 220px auto;
-  width: 35rem;
-  height: 20.5rem;
+  width: 38rem;
+  height: 23rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -36,12 +37,25 @@
   width: 100%;
 }
 
+.inputs-container > textarea {
+  /* margin: 3px 10px; */
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+}
+
 .upload-photo-title {
-  text-align: center;
   font-weight: 400;
   margin-bottom: 1rem;
   font-size: 1.25rem;
   color: #212124;
+  display: flex;
+  margin-left: 215px;
+}
+
+.empty-space {
+  margin: 30px;
 }
 
 .upload-photo-logo {
@@ -68,7 +82,7 @@
   align-items: center;
   height: 42px;
   width: 17%;
-  margin-left: 13rem;
+  margin-left: 14rem;
   text-decoration: none;
 }
 
