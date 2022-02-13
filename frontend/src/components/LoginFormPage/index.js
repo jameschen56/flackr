@@ -27,7 +27,7 @@ function LoginFormPage() {
 
   const demoLogin = () => (
     <button
-      className="demo-button"
+      className="demo-btn"
       onClick={(e) => {
         setCredential("demo@user.io");
         setPassword("password");
@@ -76,7 +76,7 @@ function LoginFormPage() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button type="submit" className="login-btn">Log In</button>
         {demoLogin()}
       </form>
     </div>
