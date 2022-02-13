@@ -1,11 +1,19 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD_IMAGES = "images/loadImages";
+const LOAD_IMAGE = "images/loadImage";
 const ADD_IMAGE = "images/addImage";
 const UPDATE_IMAGE = "images/updateImage";
 const REMOVE_IMAGE = "images/removeImage";
 
 /***** Actions ****/
+
+export const loadImage = (singleImage) => {
+  return {
+    type: LOAD_IMAGE,
+    singleImage
+  }
+}
 
 export const loadImages = (images) => {
   return {
@@ -36,6 +44,13 @@ export const removeImage = (imageId) => {
 };
 
 /***** Thunk Actions ****/
+
+export const getSingleImage = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/images/${id}`);
+  const data = await response.json();
+  dispatch(loadImage(data));
+  return data;
+}
 
 export const getAllImages = () => async (dispatch) => {
   const response = await csrfFetch("/api/images");
@@ -94,6 +109,9 @@ const initialState = {};
 const imageReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
+    case LOAD_IMAGE:
+      newState = {...state, singleImage: action.singleImage }
+      return newState;
     case LOAD_IMAGES:
       newState = {}
       action.images.forEach(image => newState[image.id] = image)

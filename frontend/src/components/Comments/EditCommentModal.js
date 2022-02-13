@@ -6,7 +6,7 @@ import {getComments, updateComment} from '../../store/comment';
 
 import './Comment.css'
 
-function EditCommentModal () {
+function EditCommentModal ({ render, setRender }) {
     const {id} = useParams()
     const dispatch = useDispatch();
     const history = useHistory();
@@ -25,7 +25,7 @@ function EditCommentModal () {
     useEffect(() => {
         // dispatch(updateComment(id))
         dispatch(getComments(id))
-    }, [dispatch, id, sessionUser.id, editedComment])
+    }, [dispatch, id, sessionUser.id])
 
     if(!comments) return null;
 
@@ -34,10 +34,11 @@ function EditCommentModal () {
     };
 
     const handleEditComment = async(e) => {
-
+        e.preventDefault();
         const data = {id: commentToUpdateId, content: editedComment}
         await dispatch(updateComment(data))
-        history.push(`/images/${id}`)
+        setRender(!render)
+        // history.push(`/images/${id}`)
         setShowModal(false)
     }
 
@@ -51,14 +52,14 @@ function EditCommentModal () {
         <>
         <button className="far fa-edit" text="Edit Comment" onClick={() => {setShowModal(true)}}></button>
         {usersComments?.map((comment)=>(
-            <div hidden={comment.userId !== sessionUser.id} key={id}>
+            <div hidden={comment.userId !== sessionUser.id} key={comment.id}>
                 {showModal && (
                     <Modal>
                         <div className='edit-form-container' >
                             <form className="edit-form" onSubmit={handleEditComment}>
                                 <h1>Update Comment</h1>
                                 <div className="update-textarea">
-                                    <textarea placeholder={comment.comment} className="comment-txt-area" type="textarea" value={editedComment.comment} onChange={(e) =>setEditedComment(e.target.value)} required/>
+                                    <textarea placeholder={comment.comment} className="comment-txt-area" type="textarea" value={editedComment.comment} onChange={(e) =>setEditedComment(e.target.value)}/>
                                 </div>
                                 <div className="update-bttn">
                                     <button onClick={e=> setCommentUpdateId(comment.id)}>Update Comment</button>

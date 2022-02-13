@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from "react-router-dom";
 import ImageEdit from '../ImageEdit';
 import Comment from '../Comments';
+import { getSingleImage } from '../../store/image';
 import './SingleImage.css'
 
 
 const SingleImage = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const sessionUser = useSelector(state => state.session.user);
-  const imagesObject = useSelector((state) => state.image)
-  const images = Object.values(imagesObject);
-  const singleImage = images.find((image) => image.id === +id);
+  // const imagesObject = useSelector((state) => state.image)
+  // const images = Object.values(imagesObject);
+  // const singleImage = images.find((image) => image.id === +id);
+  const singleImage = useSelector(state => state.image.singleImage);
   const [showMenu, setShowMenu] = useState(false);
 
   // console.log('sessionUser', sessionUser)
+  useEffect(() => {
+    dispatch(getSingleImage(id));
+  }, [dispatch, id]);
 
   const openCloseMenu = () => {
     if (showMenu) setShowMenu(false);

@@ -7,7 +7,7 @@ import SingleImage from '../SingleImage'
 import ImageInput from '../ImageInput'
 import "./PhotoStream.css";
 
-const PhotoStream = ({ render }) => {
+const PhotoStream = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const imagesObj = useSelector((state) => state.image);
@@ -21,7 +21,7 @@ const PhotoStream = ({ render }) => {
 
   useEffect(() => {
     dispatch(getAllImages());
-  }, [dispatch, render]);
+  }, [dispatch]);
 
   return (
     <div className="images-container">
