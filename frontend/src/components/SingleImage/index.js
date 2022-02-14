@@ -13,13 +13,9 @@ const SingleImage = () => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector(state => state.session.user);
-  // const imagesObject = useSelector((state) => state.image)
-  // const images = Object.values(imagesObject);
-  // const singleImage = images.find((image) => image.id === +id);
   const singleImage = useSelector(state => state.image.singleImage);
   const [showMenu, setShowMenu] = useState(false);
 
-  // console.log('sessionUser', sessionUser)
   useEffect(() => {
     dispatch(getSingleImage(id));
   }, [dispatch, id]);
@@ -34,8 +30,7 @@ const SingleImage = () => {
     <div className="single-image-page">
         <div className='single-image-container'>
           <div className="single-icons">
-            <NavLink to="/images" className='arrow-left'>
-            {/* <i class="fas fa-arrow-alt-circle-left"></i> */}
+            <NavLink to="/images" className='back-to-explore'>
                Back to Explore</NavLink>
             </div>
                 <img className="single-image" src={singleImage?.imageUrl} alt={singleImage?.description} />

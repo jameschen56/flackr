@@ -5,7 +5,7 @@ import Navigation from "./components/Navigation";
 import SplashPage from "./components/SplashPage";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
-import PhotoStream from "./components/PhotoStream";
+import Explore from "./components/Explore";
 import ImageInput from './components/ImageInput';
 import SingleImage from "./components/SingleImage";
 import ImageEdit from "./components/ImageEdit";
@@ -33,7 +33,7 @@ function App() {
             <SignupFormPage />
           </Route>
           <Route exact path="/images">
-            <PhotoStream />
+            <Explore />
           </Route>
           <Route exact path="/images/upload">
             <ImageInput />
