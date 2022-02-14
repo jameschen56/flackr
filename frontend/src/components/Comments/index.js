@@ -83,28 +83,6 @@ const Comment = () => {
 
     return (
         <div className='comment-container'>
-            {/* {console.log(usersComments)}
-            {usersComments.length === 0 ? <div className="empty-comment">Post your comment here!</div> :
-            usersComments?.map((comment)=>(
-                <div className="comments-container" key={comment.id}>
-                    <h4><Link className="link-comment-user" to={`/users/${sessionUser.id}`}>{comment.User.username}</Link></h4>
-                    <div className="user-comment-info">
-                        <div className="comment-p">
-                            <p>{comment.comment}</p>
-                        </div>
-                        <div className="user-comment-delete-edit">
-                            <div>
-                                <form onSubmit={handleDeleteComment} hidden={comment.userId !== sessionUser.id}>
-                                    <button className="fas fa-times" text="Delete Comment" onClick={e=> setCommentToDeleteId(comment.id)}></button>
-                                </form>
-                            </div>
-                            <div hidden={comment.userId !== sessionUser.id} className="edit-comment">
-                                <EditCommentModal render={render} setRender={setRender}/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            ))} */}
             {renderCommentList()}
 
 

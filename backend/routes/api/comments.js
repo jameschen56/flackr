@@ -30,16 +30,37 @@ router.post('/:id', requireAuth, asyncHandler(async(req, res) => {
 
 }));
 
-router.put('/:id', requireAuth, asyncHandler(async(req, res) => {
-    const {content} = req.body;
-    console.log('-------------------------------------------------------------------', req.body)
-    const {id} = req.params;
-    console.log('-------------------------------------------------------------------', req.params)
+// router.put('/:id', requireAuth, asyncHandler(async(req, res) => {
+//     const {content} = req.body;
+//     console.log('-------------------------------------------------------------------', req.body)
+//     const {id} = req.params;
+//     console.log('-------------------------------------------------------------------', req.params)
+//     const comment = await Comment.findByPk(id);
+//     console.log('-------------------------------------------------------------------', comment)
+//     await comment.update({comment: content});
+//     // console.log('---------------JSON---------------', res.json(comment))
+//     return res.json(comment)
+// }));
+
+router.put('/:id', requireAuth, asyncHandler(async (req, res) => {
+    const { content } = req.body;
+
+    const { id } = req.params;
+
     const comment = await Comment.findByPk(id);
-    console.log('-------------------------------------------------------------------', comment)
-    await comment.update({comment: content});
-    // console.log('---------------JSON---------------', res.json(comment))
-    return res.json(comment)
+
+    //NOTE ADDED==>
+    //here you are updating it
+    const editingComment = await comment.update({ comment: content });
+
+    //here you are finding it again and INCLUDING the user.
+    const updatedComment = await Comment.findByPk(editingComment.id, {
+        include: [User]
+    });
+
+    //HERE you are returning the NEW updated comment WITH USER included. 
+    //This is why you did not have access to the username. 
+    return res.json(updatedComment)
 }));
 
 router.delete('/:id', requireAuth, asyncHandler(async(req, res) => {
