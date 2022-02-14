@@ -5,6 +5,8 @@ const ADD_COMMENT = 'comments/ADD_COMMENT';
 const EDIT_COMMENT = 'comments/EDIT_COMMENT';
 const DELETE_COMMENT = 'comments/DELTE_COMMENT';
 
+/***** Actions ****/
+
 const loadComments = comments => ({
     type: LOAD_COMMENTS,
     comments
@@ -25,6 +27,8 @@ const deleteComment = comment => ({
     type: DELETE_COMMENT,
     comment
 })
+
+/***** Thunk Actions ****/
 
 export const getComments = (id) => async dispatch => {
     const response = await csrfFetch(`/api/comments/${id}`);
@@ -75,6 +79,8 @@ export const removeComment = (id) => async dispatch => {
         dispatch(deleteComment(id))
     }
 }
+
+/***** Reducer ****/
 
 const initialState = {}
 

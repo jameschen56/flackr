@@ -5,19 +5,16 @@ import { getAllImages } from "../../store/image";
 import ImageDetail from "../ImageDetail";
 import SingleImage from '../SingleImage'
 import ImageInput from '../ImageInput'
-import "./PhotoStream.css";
+import "./Explore.css";
 
-const PhotoStream = () => {
+const Explore = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const imagesObj = useSelector((state) => state.image);
   const images = Object.values(imagesObj);
-  // console.log('images', images)
-  // console.log('sessionUser', sessionUser.id)
   const sessionImages = images.filter(
     (image) => image.userId === sessionUser.id
   );
-  // console.log("sessionImages", sessionImages);
 
   useEffect(() => {
     dispatch(getAllImages());
@@ -25,8 +22,7 @@ const PhotoStream = () => {
 
   return (
     <div className="images-container">
-      {/* <h2 className="explore-photo-stream">Explore</h2> */}
-      <div className="photo-stream-content">
+      <div className="explore-content">
         {sessionImages?.map(({ imageUrl, id, description }) => (
           <ImageDetail
             key={id}
@@ -47,4 +43,4 @@ const PhotoStream = () => {
   );
 };
 
-export default PhotoStream;
+export default Explore;
