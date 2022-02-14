@@ -43,7 +43,7 @@ const ImageEdit = ({ singleImage }) => {
     };
 
     return (
-      <div className='editBox'>
+      <div className='edit-box'>
         <form onSubmit={handleSubmit}>
           <label> Image URL
           <input
