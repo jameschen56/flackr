@@ -24,7 +24,6 @@ function EditCommentModal ({ render, setRender }) {
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
-        // dispatch(updateComment(id))
         dispatch(getComments(id))
     }, [dispatch, id, sessionUser.id])
 
@@ -39,7 +38,6 @@ function EditCommentModal ({ render, setRender }) {
         const data = {id: commentToUpdateId, content: editedComment}
         await dispatch(updateComment(data))
         setRender(!render)
-        // history.push(`/images/${id}`)
         setShowModal(false)
     }
 

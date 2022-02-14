@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useParams, Redirect, Link} from 'react-router-dom';
-import EditCommentModal from './EditCommentModal';
+import EditCommentModal from './EditComment';
 import {getComments, createComment,removeComment} from '../../store/comment';
 
 import './Comment.css'

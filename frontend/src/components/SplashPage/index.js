@@ -4,11 +4,11 @@ import "./SplashPage.css";
 
 const SplashPage = () => {
   return (
-    <div className="splash-container">
-      <div className="splash-text-container">
+    <div className="splash-page-container">
+      <div className="inspiration-text-container">
         <div className="splash-words">
           <h1>Find your inspiration.</h1>
-          <h2 className="flickr-community">
+          <h2 className="flickr-logo">
             Join the Flackr community, home to tens of billions of photos and 2
             million groups.
           </h2>

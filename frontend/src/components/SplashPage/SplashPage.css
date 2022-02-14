@@ -1,4 +1,4 @@
-.splash-container {
+.splash-page-container {
   display: grid;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13,39 +13,18 @@
   z-index: -1;
 }
 
-.header1 {
-  padding: 0;
-  margin: 0px 0 5px 0;
-  color: black;
-  font-size: 40px;
-  line-height: 40px;
-  font-weight: 450;
-  text-align: center;
-}
-
-.slogan {
-  padding: 0;
-  margin: 0;
-  color: black;
-  font-size: 25px;
-  line-height: 25px;
-  font-weight: 300;
-  margin: 15px 0 200px 0;
-  text-align: center;
-}
-
 .my-links {
   background-color: black;
   position: fixed;
   bottom: 0px;
+  align-items: center;
+  z-index: 3;
+  font-size: 17px;
   height: 85px;
   padding-right: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  z-index: 3;
-  font-size: 17px;
   text-decoration: none;
 }
 
@@ -59,19 +38,20 @@
   color: white;
 }
 
-.splash-text-container {
+
+.inspiration-text-container {
   background-image: url(https://images.unsplash.com/photo-1535914191444-2a3b177956c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80);
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   width: 100%;
-  height: 95%;
-  padding: 0 60px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 95%;
   animation: slide 30s linear infinite;
+  padding: 0 60px;
 }
 
 .splash-words {
@@ -80,11 +60,11 @@
 
 .splash-words h1 {
   color: white;
-  font-size: 56px;
-  font-weight: 500;
   margin: 0px 0px 100px 160px;
   font-weight: 600;
+  font-size: 56px;
   text-align: center;
+  font-weight: 500;
 }
 
 .splash-words h2 {
@@ -96,26 +76,18 @@
 
 .splash-words button {
   height: 64px;
-  font-size: 24px;
-  font-weight: 600;
-  color: black;
   text-align: center;
   text-decoration: none;
   border-radius: 3px;
   border: none;
-  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
   width: 200px;
   margin: 100px 0 0 850px;
+  cursor: pointer;
 }
 
-
-.flickr-community {
-  color: white;
-  font-size: 23px;
-  font-weight: 500;
-  text-align: center;
-  position: relative;
-}
 
 @keyframes slide {
   0% {

@@ -22,7 +22,7 @@ const Explore = () => {
 
   return (
     <div className="images-container">
-      <div className="photo-stream-content">
+      <div className="explore-content">
         {sessionImages?.map(({ imageUrl, id, description }) => (
           <ImageDetail
             key={id}
