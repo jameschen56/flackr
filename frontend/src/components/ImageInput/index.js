@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createImage } from "../../store/image";
@@ -15,6 +15,7 @@ const ImageInput = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const uploadValidation = (e) => {
     let validationErrors = [];
@@ -33,6 +34,13 @@ const ImageInput = () => {
     setImageUrl("");
     setDescription("");
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+        setIsLoaded(true);
+    }, 300);
+    return () => clearTimeout(timer);
+});
 
   const updateFile = (e) => {
     const file = e.target.files[0];
