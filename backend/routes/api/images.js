@@ -22,7 +22,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 // Create an image 
-router.post('', validateCreate, asyncHandler(async (req, res) => {
+router.post('', singleMulterUpload("image"), asyncHandler(async (req, res) => {
     const { userId } = req.body;
     const imageUrl = await singlePublicFileUpload(req.file);
     const image = await Image.create({userId, imageUrl, description});
