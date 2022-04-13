@@ -5,6 +5,7 @@ const router = express.Router();
 
 const { Image } = require('../../db/models')
 const { validateCreate, validateUpdate } = require('../../utils/validation')
+const {singlePublicFileUpload, singleMulterUpload} = require("../../awsS3")
 
 // Get all the images
 router.get('', asyncHandler(async (req, res) => {
@@ -21,9 +22,11 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }))
 
 // Create an image 
-router.post('', validateCreate, asyncHandler(async (req, res) => {
-    const image = await Image.create(req.body);
-    res.json(image)
+router.post('', singleMulterUpload("image"), asyncHandler(async (req, res) => {
+    const { userId, description } = req.body
+    const imageUrl = await singlePublicFileUpload(req.file);
+    const image = await Image.create({userId, imageUrl, description});
+    return res.json(image);
 }))
 
 // Delete an image
