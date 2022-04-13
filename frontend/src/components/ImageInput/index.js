@@ -11,7 +11,7 @@ const ImageInput = () => {
   const userId = sessionUser.id;
   // console.log("userId", userId);
 
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState(null);
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
 
