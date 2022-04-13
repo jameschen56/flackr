@@ -11,9 +11,9 @@ const REMOVE_IMAGE = "images/removeImage";
 export const loadImage = (singleImage) => {
   return {
     type: LOAD_IMAGE,
-    singleImage
-  }
-}
+    singleImage,
+  };
+};
 
 export const loadImages = (images) => {
   return {
@@ -50,7 +50,7 @@ export const getSingleImage = (id) => async (dispatch) => {
   const data = await response.json();
   dispatch(loadImage(data));
   return data;
-}
+};
 
 export const getAllImages = () => async (dispatch) => {
   const response = await csrfFetch("/api/images");
@@ -59,7 +59,6 @@ export const getAllImages = () => async (dispatch) => {
 };
 
 export const updateImage = (image) => async (dispatch) => {
-  
   const response = await csrfFetch(`/api/images/${image.id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -74,21 +73,29 @@ export const updateImage = (image) => async (dispatch) => {
 };
 
 export const createImage = (newImage) => async (dispatch) => {
-  const { userId, imageUrl, description } = newImage;
-  const response = await csrfFetch("/api/images", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      userId,
-      imageUrl,
-      description,
-    }),
-  });
+  const { userId, image } = newImage;
+  // const { userId, imageUrl, description } = newImage;
+  // const response = await csrfFetch("/api/images", {
+  //   method: "POST",
+  //   headers: { "Content-Type": "application/json" },
+  //   body: JSON.stringify({
+  //     userId,
+  //     imageUrl,
+  //     description,
+  //   }),
+  const formData = new FormData();
+  formData.append("userId", userId);
+  formData.append("image", image);
 
-  
+  const response = await csrfFetch("/api/images/", {
+    method: "POST",
+    headers: { "Content-Type": "multipart/form-data" },
+    body: formData,
+  });
+  // });
 
   const data = await response.json();
-  
+
   dispatch(addImage(data.id));
   return response;
 };
@@ -110,11 +117,11 @@ const imageReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case LOAD_IMAGE:
-      newState = {...state, singleImage: action.singleImage }
+      newState = { ...state, singleImage: action.singleImage };
       return newState;
     case LOAD_IMAGES:
-      newState = {}
-      action.images.forEach(image => newState[image.id] = image)
+      newState = {};
+      action.images.forEach((image) => (newState[image.id] = image));
       return newState;
     case ADD_IMAGE:
       newState = { ...state, ...action.image };

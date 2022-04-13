@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk");
 // name of your bucket here
-const NAME_OF_BUCKET = "flackr";
+const Flackr = "flackr";
 
 const multer = require("multer");
 
@@ -19,7 +19,7 @@ const singlePublicFileUpload = async (file) => {
   // name of the file in your S3 bucket will be the date in ms plus the extension name
   const Key = new Date().getTime().toString() + path.extname(originalname);
   const uploadParams = {
-    Bucket: NAME_OF_BUCKET,
+    Bucket: Flackr,
     Key,
     Body: buffer,
     ACL: "public-read",
@@ -46,7 +46,7 @@ const singlePrivateFileUpload = async (file) => {
   // name of the file in your S3 bucket will be the date in ms plus the extension name
   const Key = new Date().getTime().toString() + path.extname(originalname);
   const uploadParams = {
-    Bucket: NAME_OF_BUCKET,
+    Bucket: Flackr,
     Key,
     Body: buffer,
   };
@@ -85,6 +85,7 @@ const storage = multer.memoryStorage({
 
 const singleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).single(nameOfKey);
+  
 const multipleMulterUpload = (nameOfKey) =>
   multer({ storage: storage }).array(nameOfKey);
 
