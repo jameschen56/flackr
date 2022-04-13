@@ -28,7 +28,7 @@ const Comment = () => {
         dispatch(getComments(id))
         renderCommentList();
     }, [dispatch, id, render])
-
+    
     if(!comments) return null;
 
     if(!sessionUser) {
