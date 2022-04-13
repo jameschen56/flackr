@@ -73,11 +73,11 @@ export const updateImage = (image) => async (dispatch) => {
 };
 
 export const createImage = (newImage) => async (dispatch) => {
-  const { userId, imageUrl, description } = newImage;
+  const { userId, image, description } = newImage;
  
   const formData = new FormData();
   formData.append("userId", userId);
-  formData.append("image", imageUrl);
+  formData.append("image", image);
   formData.append("description", description);
 
 

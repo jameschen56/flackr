@@ -11,14 +11,15 @@ const ImageInput = () => {
   const userId = sessionUser.id;
   // console.log("userId", userId);
 
-  const [imageUrl, setImageUrl] = useState(null);
+  const [image, setImage] = useState(null)
+  const [imageUrl, setImageUrl] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);
 
   const uploadValidation = (e) => {
     let validationErrors = [];
-    if (!imageUrl.length) validationErrors.push("Please provide a valid URL");
-    if (imageUrl.length > 0 && !imageUrl.match(/^https?:\/\/.+\/.+$/)) validationErrors.push("Please provide a valid URL");
+    // if (!imageUrl.length) validationErrors.push("Please provide a valid URL");
+    // if (imageUrl.length > 0 && !imageUrl.match(/^https?:\/\/.+\/.+$/)) validationErrors.push("Please provide a valid URL");
     if (!description.length) validationErrors.push("Please provide a description");
 
     if (validationErrors.length) {
@@ -33,6 +34,11 @@ const ImageInput = () => {
     setDescription("");
   };
 
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if(file) setImage(file)
+  }
+
   const handleSubmit = async (e) => {
     if(uploadValidation()) {
 
@@ -41,7 +47,7 @@ const ImageInput = () => {
 
       const newImage = {
         userId,
-        imageUrl,
+        image,
         description,
       };
 
@@ -74,14 +80,14 @@ const ImageInput = () => {
           ))}
         </ul>
         <div className="inputs-container">
-          <input
+          {/* <input
             type="text"
-            onChange={(e) => setImageUrl(e.target.value)}
+            onChange={(e) => setImageUrl(e.target.files[0])}
             value={imageUrl}
             placeholder="Image URL"
             name="imageUrl"
-          />
-
+          /> */}
+          <input type="file" onChange={updateFile} />
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
