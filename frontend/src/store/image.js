@@ -86,7 +86,6 @@ export const createImage = (newImage) => async (dispatch) => {
     headers: { "Content-Type": "multipart/form-data" },
     body: formData,
   });
-  // });
 
   const data = await response.json();
 

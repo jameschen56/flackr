@@ -13,7 +13,7 @@
   background-color: white;
   margin: 220px auto;
   width: 38rem;
-  height: 23rem;
+  height: 24rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -33,7 +33,7 @@
   /* margin: 3px 10px; */
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  height: 30px;
+  height: -10px;
   width: 100%;
 }
 
@@ -41,7 +41,7 @@
   /* margin: 3px 10px; */
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 5px;
-  height: 30px;
+  height: -10px;
   width: 100%;
 }
 
@@ -76,13 +76,11 @@
   padding: 10px;
   font-weight: 600;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  justify-content: center;
-  align-items: center;
   height: 42px;
-  width: 17%;
-  margin-left: 14rem;
+  width: 15.5%;
+  margin-left: 14.5rem;
   text-decoration: none;
 }
 
