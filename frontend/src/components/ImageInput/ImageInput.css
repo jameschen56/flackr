@@ -5,15 +5,15 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: #Eaf4fc;
+  background-image: url("../../../public/images/mountain-2.jpg");
   z-index: -1;
 }
 
 .upload-photo-form {
   background-color: white;
   margin: 220px auto;
-  width: 38rem;
-  height: 24rem;
+  width: 30rem;
+  height: 28rem;
   border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.5rem;
   border-radius: 1rem;
@@ -21,12 +21,22 @@
   font-size: 0.8rem;
 }
 
+.upload-photo-icon {
+  margin-left: 175px;
+}
+
 .inputs-container {
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: space-evenly;
   width: 94%;
   margin: 0px;
+}
+
+.inputs-container label {
+  margin-left: 10px;
+  
 }
 
 .inputs-container > input {
@@ -51,7 +61,7 @@
   font-size: 1.25rem;
   color: #212124;
   display: flex;
-  margin-left: 215px;
+  margin-left: 155px;
 }
 
 .empty-space {
@@ -73,17 +83,23 @@
   color: white;
   background-color: #128fdc;
   transition: color 0.15c ease-in-out;
-  padding: 10px;
-  font-weight: 600;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-weight: 500;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
   height: 42px;
-  width: 15.5%;
-  margin-left: 14.5rem;
+  width: 22%;
+  margin-left: 11rem;
   text-decoration: none;
 }
 
 .blank-spaces {
   margin-bottom: 15px;
 } 
+
+#navbar-background{
+  background-color: #212124;
+  height: 64px;
+}

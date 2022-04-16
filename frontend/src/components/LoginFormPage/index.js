@@ -58,7 +58,7 @@ function LoginFormPage() {
           </NavLink>
         </header>
         <h2>Log in to flackr</h2>
-        <div className="input-container">
+        <div className="input-container-login">
         <label>
           Username or Email
           <input
