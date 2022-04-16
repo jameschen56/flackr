@@ -42,14 +42,15 @@ function ProfileButton({ user }) {
         </Link>
         <span className="welcome-user">Welcome {user.username}!</span>
         <button onClick={openMenu} className='user-button'>
-          <i className="fas fa-user" />
+          {/* <i className="fas fa-user" /> */}
+          <div className="capture-user"></div>
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
             <li>{user.username}</li>
             <li>{user.email}</li>
             <li>
-              <button onClick={logout}>Log Out</button>
+              <button onClick={logout} id="logout-btn">Log Out</button>
             </li>
           </ul>
         )}
