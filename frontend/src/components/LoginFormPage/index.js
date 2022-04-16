@@ -39,7 +39,7 @@ function LoginFormPage() {
 
   return (
     <div className="login-form-container">
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="login-form">
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -58,6 +58,7 @@ function LoginFormPage() {
           </NavLink>
         </header>
         <h2>Log in to flackr</h2>
+        <div className="input-container">
         <label>
           Username or Email
           <input
@@ -78,6 +79,7 @@ function LoginFormPage() {
         </label>
         <button type="submit" className="login-btn">Log In</button>
         {demoLogin()}
+        </div>
       </form>
     </div>
   );

@@ -1,1 +1,17 @@
 /* TODO Add site wide styles */
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Staatliches&family=Yellowtail&display=swap");
+@import url("https://use.typekit.net/kyk0anv.css");
+
+*,
+body,
+html {
+  font-family: proxima-nova, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --soft-white: #dfe0df;
+}

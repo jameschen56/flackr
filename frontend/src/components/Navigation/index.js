@@ -12,19 +12,15 @@ function Navigation({ isLoaded }) {
     sessionLinks = <ProfileButton user={sessionUser} />;
   } else {
     sessionLinks = (
-      <>
-        <NavLink id="login-btn" to="/login" >
-          Log In
-        </NavLink>
-        <NavLink id="signup-btn" to="/signup" >
-          Sign Up
-        </NavLink>
-      </>
+      <nav className="navbar-login-signup">
+        <NavLink to="/login"><button id="login-btn">Log In</button></NavLink>
+        <NavLink id="signup-btn" to="/signup"><button id="signup-btn">Sign Up</button></NavLink>
+      </nav>
     );
   }
 
   return (
-    <nav className="nav-bar">
+    <header className="nav-bar">
       <span className="left-nav-bar">
         <NavLink id="home-logo" exact to="/" style={{ textDecoration: "none" }}>
           <span className="dot" id="blueDot"></span>
@@ -33,7 +29,7 @@ function Navigation({ isLoaded }) {
         </NavLink>
       </span>
       <span className="right-nav-bar">{isLoaded && sessionLinks}</span>
-    </nav>
+    </header>
   );
 }
 
