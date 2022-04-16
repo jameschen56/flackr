@@ -4,7 +4,6 @@
   align-items: center;
   height: 110vh;
   width: 100%;
-  font-size: 25px;
   font-weight: 500;
   background-repeat: no-repeat;
   background-position: center;
@@ -44,11 +43,11 @@
   text-align: center;
 }
 
-.input-container {
+.input-container-login {
   margin-top: 24px;
 }
 
-.input-container label {
+.input-container-login label {
   margin-left: 10px;
 }
 
@@ -56,8 +55,8 @@
   color: white;
   background-color: #128fdc;
   transition: color 0.15c ease-in-out;
-  padding: 16px;
-  font-weight: 600;
+  padding: 8px;
+  font-weight: 500;
   font-size: 16px;
   border-radius: 6px;
   border: none;
@@ -77,8 +76,8 @@
   color: white;
   background-color: #128fdc;
   transition: color 0.15c ease-in-out;
-  padding: 16px;
-  font-weight: 600;
+  padding: 8px;
+  font-weight: 500;
   font-size: 16px;
   border-radius: 6px;
   border: none;

@@ -35,7 +35,7 @@ function SignupFormPage() {
 
   return (
     <div className="signup-form-container">
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit} className="signup-form">
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
@@ -55,6 +55,7 @@ function SignupFormPage() {
           <div className="empty-space"></div>
         </header>
         <h2>Sign up for flackr</h2>
+        <div className="input-container-signup">
         <label>
           Name
           <input
@@ -101,6 +102,7 @@ function SignupFormPage() {
           />
         </label>
         <button type="submit" className='signup-btn'>Sign Up</button>
+        </div>
       </form>
     </div>
   );
