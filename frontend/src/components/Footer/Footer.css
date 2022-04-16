@@ -131,12 +131,16 @@ footer.logged-in-footer {
     animation-delay: 6s;
 }
 
-.slideshow li:nth-child(2) div {
-    animation-delay: 3s;
+.slideshow li:nth-child(4) span {
+    background-image: url("https://pixelphotoapp.s3.us-west-2.amazonaws.com/pixel-seeder-photos/splash-images/Snowy-mountains.jpg");
+    animation-delay: 9s;
 }
-.slideshow li:nth-child(3) div {
-    animation-delay: 6s;
+
+.slideshow li:nth-child(5) span {
+    background-image: url("https://pixelphotoapp.s3.us-west-2.amazonaws.com/pixel-seeder-photos/splash-images/Sheep.jpg");
+    animation-delay: 12s;
 }
+
 
 @keyframes imageAnimation {
     0% { opacity: 0; animation-timing-function: ease-in; }
