@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer"
 import { NavLink } from "react-router-dom";
 
 import "./SplashPage.css";
@@ -15,6 +16,12 @@ const SplashPage = () => {
             <NavLink to="/signup"><button>Start for free</button></NavLink>
         </div>
       </div>
+      <ul className="slideshow">
+                <li><span>Image 01</span></li>
+                <li><span>Image 02</span></li>
+                <li><span>Image 03</span></li>
+            </ul>
+      <Footer />
     </>
   );
 };
