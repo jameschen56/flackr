@@ -71,12 +71,13 @@
 .upload-photo-logo {
   margin-bottom: 1rem;
 }
-
-.errors-list {
+.upload-photo-form ul li {
   color: red;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
   position: relative;
-  padding: 0.8rem;
+  margin-left: 135px;
+  bottom: 5px
 }
 
 .upload-image-button {
