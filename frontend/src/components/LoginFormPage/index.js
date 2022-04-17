@@ -40,11 +40,6 @@ function LoginFormPage() {
   return (
     <div className="login-form-container">
       <form onSubmit={handleSubmit} className="login-form">
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
         <header>
           <NavLink
             id="home-logo"
@@ -52,12 +47,19 @@ function LoginFormPage() {
             to="/"
             style={{ textDecoration: "none" }}
           >
-            <span className="dot" id="blueDot"></span>
-            <span className="dot" id="redDot"></span>
+            <span>
+              <span className="dot" id="blueDot"></span>
+              <span className="dot" id="redDot"></span>
+            </span>
             <span className="logo-title">flackr</span>
           </NavLink>
         </header>
         <h2>Log in to flackr</h2>
+          <ul>
+            {errors.map((error, idx) => (
+              <li key={idx}>{error}</li>
+            ))}
+          </ul>
         <div className="input-container-login">
         <label>
           Username or Email

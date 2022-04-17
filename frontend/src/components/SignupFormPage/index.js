@@ -36,11 +36,6 @@ function SignupFormPage() {
   return (
     <div className="signup-form-container">
       <form onSubmit={handleSubmit} className="signup-form">
-        <ul>
-          {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
-          ))}
-        </ul>
         <header>
           <NavLink
             id="home-logo"
@@ -55,6 +50,11 @@ function SignupFormPage() {
           <div className="empty-space"></div>
         </header>
         <h2>Sign up for flackr</h2>
+        <ul>
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
         <div className="input-container-signup">
         <label>
           Name

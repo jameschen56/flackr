@@ -264,3 +264,8 @@
   background-size: contain;
   border-radius: 50%;
 }
+
+.capture-user:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

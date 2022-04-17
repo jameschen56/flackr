@@ -1,10 +1,13 @@
 import React from "react";
 import Footer from "../Footer"
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import "./SplashPage.css";
 
 const SplashPage = () => {
+  const sessionUser = useSelector((state) => state.session.user);
+
   return (
     <>
       <div className="splash-page-content">
@@ -13,7 +16,7 @@ const SplashPage = () => {
 
             <h3>Join the Flackr community, home to tens of billions of photos and 2 million groups</h3>
 
-            <NavLink to="/signup"><button>Start for free</button></NavLink>
+            {sessionUser ? <NavLink to="/images"><button>Start for free</button></NavLink> : <NavLink to="/signup"><button>Start for free</button></NavLink>}
         </div>
       </div>
       <ul className="slideshow">
