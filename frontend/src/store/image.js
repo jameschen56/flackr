@@ -6,7 +6,7 @@ const ADD_IMAGE = "images/addImage";
 const UPDATE_IMAGE = "images/updateImage";
 const REMOVE_IMAGE = "images/removeImage";
 
-/***** Actions ****/
+/* ----- ACTIONS ------ */
 
 export const loadImage = (singleImage) => {
   return {
@@ -43,7 +43,7 @@ export const removeImage = (imageId) => {
   };
 };
 
-/***** Thunk Actions ****/
+/* ------ THUNK ACTIONS ------ */
 
 export const getSingleImage = (id) => async (dispatch) => {
   const response = await csrfFetch(`/api/images/${id}`);
@@ -102,7 +102,7 @@ export const deleteImage = (image) => async (dispatch) => {
   return response;
 };
 
-/***** Reducer ****/
+/* ------ REDUCER ------ */
 
 const initialState = {};
 

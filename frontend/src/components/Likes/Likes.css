@@ -1,0 +1,25 @@
+/* .fas.fa-heart.icon {
+  color: rgb(233, 50, 65);
+} */
+
+.fas.fa-star {
+  color: rgb(255, 149, 41);
+}
+
+.favorites-container {
+  /* margin: 15px; */
+  margin-top: 10px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.favorites-container span {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.favorites-icon:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
