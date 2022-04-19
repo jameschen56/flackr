@@ -5,7 +5,7 @@
 
 .comment-container {
     max-height: 100vh;
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,14 +23,16 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.link-comment-user{
+.link-comment-user {
+    font-size: 17px;
+    margin-left: 23px;
     text-decoration: none;
     color: #128fdc;
 }
 
-.link-comment-user:hover {
+/* .link-comment-user:hover {
     color:rgb(171, 170, 170)
-}
+} */
 
 .user-comment-info{
     display: flex;
@@ -121,7 +123,9 @@
 }
 
 .comment-p p {
-    margin: 5px 0 0 0;
+    /* margin: 5px 0 0 0; */
+    margin-top: 5px;
+    margin-left: 23px;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
@@ -157,10 +161,11 @@
 .post-comment-bttn-div {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 15px;
 }
 
 .post-comment-bttn {
-    width: 25%;
+    width: 15%;
     border: 0;
     margin-top: 0.5em;
     height: 40px;

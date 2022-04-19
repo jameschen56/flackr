@@ -40,7 +40,7 @@ const Comment = () => {
             usersComments.length === 0 ? <div className="empty-comment">Post your comment here!</div> :
             usersComments?.map((comment)=>(
                 <div className="comments-container" key={comment.id}>
-                    <h4><Link className="link-comment-user" to={`/users/${sessionUser?.id}`}>{comment?.User?.username}</Link></h4>
+                    <h4><p className="link-comment-user" >{comment?.User?.username}</p></h4>
                     <div className="user-comment-info">
                         <div className="comment-p">
                             <p>{comment.comment}</p>

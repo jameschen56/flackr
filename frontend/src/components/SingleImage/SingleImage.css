@@ -19,6 +19,16 @@ p {
     font-weight: bold;
 }
 
+.username-info {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.image-description {
+  margin-left: 20px;
+  font-size: 19px;
+}
+
 .single-image-page {
   display: block;
   position: absolute;

@@ -40,24 +40,23 @@ const SingleImage = () => {
 
         </div>
 
-        <div className="photo-description">
+  
 
-            <div className="photo-description-text">
+            <div className="image-description-text">
                 <div className="name-and-edit">
-                <h2>Hi, {sessionUser.username}</h2>
+                <h2 className="username-info">Hi, {sessionUser.username}</h2>
                 <button id="edit-image-button" onClick={openCloseMenu}>
                   <i className="fas fa-pen"></i>
                 </button>
                 </div>
-                <p>Description: {singleImage?.description}</p>
+                <p className="image-description">Description: {singleImage?.description}</p>
                 <Likes imageId={singleImage?.id} />
                 <div>
                   <Comment />
                 </div>
             </div>
-        </div>
         {showMenu && (
-            <div className="photo-edit-delete-form">
+            <div className="image-edit-delete-form">
                 <ImageEdit singleImage={singleImage}/>
             </div>
         )}
