@@ -1,6 +1,8 @@
 import { csrfFetch } from "./csrf";
 
 const LOAD_LIKES = "likes/LOAD_LIKES";
+const ADD_LIKE = "likes/ADD_LIKE"
+const REMOVE_LIKE = "likes/REMOVE_LIKE"
 
 /* ----- ACTIONS ------ */
 
@@ -10,6 +12,20 @@ const load_likes = (likes) => {
     likes,
   };
 };
+
+const add_like = (like) => {
+  return {
+    type: ADD_LIKE,
+    like
+  }
+}
+
+const remove_like = (likeId) => {
+  return {
+    type: REMOVE_LIKE,
+    likeId
+  }
+}
 
 
 /* ------ THUNK ACTIONS ------ */
@@ -24,6 +40,36 @@ export const getAllLikes = () => async(dispatch) => {
     }
   }
 
+  export const addLike = ({ userId, imageId }) => async(dispatch) => {
+    const response = await csrfFetch('/api/likes', {
+      method: "POST",
+      body: JSON.stringify({
+        userId,
+        imageId
+      })
+    })
+  
+    if (response.ok) {
+      const like = await response.json()
+      dispatch(add_like(like))
+      return like
+    }
+  }
+
+  export const removeLikeById = (likeId) => async(dispatch) => {
+    const response = await csrfFetch(`/api/likes/${likeId}`, {
+      method: 'DELETE',
+      body: JSON.stringify({
+        likeId
+      })
+    })
+  
+    if (response.ok) {
+      const likeToDelete = await response.json();
+      dispatch(remove_like(likeToDelete))
+      return "Remove successful"
+    }
+  }
 
 
 /* ------ REDUCER ------ */
@@ -37,10 +83,16 @@ export default function likeReducer(state = initialState, action) {
         newState = {};
         action.likes.forEach((like) => { newState[like.id] = like })
         return newState;
-
+      case ADD_LIKE:
+        newState = {...state}
+        newState[action.like.id] = action.like;
+        return newState
+      case REMOVE_LIKE:
+        newState = {...state}
+        delete newState[action.likeId]
+        return newState;
       default:
         return state;
-
     }
 
 }
