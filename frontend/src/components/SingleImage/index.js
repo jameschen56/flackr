@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import ImageEdit from '../ImageEdit';
 import Comment from '../Comments';
 import { getSingleImage } from '../../store/image';
+import Likes from '../Likes';
 import './SingleImage.css'
 
 
@@ -14,6 +15,7 @@ const SingleImage = () => {
 
   const sessionUser = useSelector(state => state.session.user);
   const singleImage = useSelector(state => state.image.singleImage);
+
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
