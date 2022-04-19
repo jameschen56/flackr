@@ -50,6 +50,7 @@ const SingleImage = () => {
                 </button>
                 </div>
                 <p>Description: {singleImage?.description}</p>
+                <Likes imageId={singleImage?.id} />
                 <div>
                   <Comment />
                 </div>
