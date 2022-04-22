@@ -89,7 +89,7 @@ export const createImage = (newImage) => async (dispatch) => {
 
   const data = await response.json();
 
-  dispatch(addImage(data.id));
+  dispatch(addImage(data));
   return response;
 };
 
@@ -117,7 +117,8 @@ const imageReducer = (state = initialState, action) => {
       action.images.forEach((image) => (newState[image.id] = image));
       return newState;
     case ADD_IMAGE:
-      newState = { ...state, ...action.image };
+      newState = { ...state };
+      newState[action.image.id] = action.image
       return newState;
     case UPDATE_IMAGE:
       newState = {
